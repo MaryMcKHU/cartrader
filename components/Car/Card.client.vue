@@ -7,9 +7,6 @@ const props = defineProps({
   favored: Boolean,
 })
 const emit = defineEmits(['favor'])
-// const favored = useState(`favored-${props.car.id}`, () => {
-//   return false
-// });
 </script>
 
 <template>
