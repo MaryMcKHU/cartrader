@@ -5,6 +5,5 @@ useHead({
 </script>
 
 <template>
-  <NavBar />
   <CarHero />
 </template>
