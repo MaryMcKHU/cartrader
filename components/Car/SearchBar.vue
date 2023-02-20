@@ -1,6 +1,14 @@
 <script setup>
+import { useSpeechRecognition } from '@vueuse/core';
+import { ref, watch } from 'vue'
+const lang = ref('en-US')
 const city = ref("");
 const cityError = ref(false);
+// const { textarea, input } = useTextareaAutosize();
+const speech = useSpeechRecognition({
+  lang,
+  continuous: true,
+})
 
 const handleSearch = () => {
   if (!city.value) {
@@ -19,6 +27,13 @@ const handleSearch = () => {
       placeholder="Search by city..."
       v-model="city"
     />
+    <!-- <textarea
+      ref="textarea"
+      v-model="input"
+      class="resize-none"
+      
+      placeholder="Search by city..."
+    /> -->
     <button class="bg-sky-500 px-10 text-white" @click="handleSearch">
       Search
     </button>
