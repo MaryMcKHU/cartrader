@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute()
-const {cars} = useCars();
+const {data} = await useFetchCar(route.params.id)
 const { toTitleCase } = useUtilities();
 useHead({
   title: toTitleCase(route.params.name)
